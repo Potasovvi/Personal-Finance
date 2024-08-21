@@ -26,9 +26,15 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => 
 	      {
-	      console.log('Success!', response);	    
-      	      window.location.href = "https://potasovvi.github.io/HP_quiz-V4/quiz-hp.html";  // Reindirizzamento alla pagina "quiz-hp"
-	      })	    
+	      console.log('Success!', response);
+		      
+      	        // Ottieni i valori di nome e cognome dal form
+        	const nome = document.getElementById('nome').value;
+        	const cognome = document.getElementById('cognome').value;
+
+        // Reindirizza alla pagina "quiz-hp.html" con nome e cognome come parametri nella URL
+        window.location.href = `quiz-hp.html?nome=${encodeURIComponent(nome)}&cognome=${encodeURIComponent(cognome)}`;
+        })	    
 	.catch(error => console.error('Error!', error.message))		
   })
 </script>
