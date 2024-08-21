@@ -26,7 +26,7 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => 
 	      {
-	      console.log('Success!', response))	    
+	      console.log('Success!', response);	    
       	      window.location.href = "https://potasovvi.github.io/HP_quiz-V4/quiz-hp.html";  // Reindirizzamento alla pagina "quiz-hp"
 	      })	    
 	.catch(error => console.error('Error!', error.message))		
