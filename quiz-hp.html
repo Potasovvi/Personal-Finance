@@ -35,14 +35,18 @@
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec'
     const form = document.forms['submit-to-google-sheet']
-	    
+	
+   form.addEventListener('submit', e => {
+   e.preventDefault()
+
+   // Crea un nuovo oggetto FormData a partire dal form esistente
+   const formData = new FormData(form);
+
     // Aggiungi nome e cognome al FormData
     formData.append('nome', nome); // Aggiunge il nome estratto dalla URL
     formData.append('cognome', cognome); // Aggiunge il cognome estratto dalla URL
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+	  
+    fetch(scriptURL, { method: 'POST', body: formData })
       .then(response => console.log('Success!', response))	    
 	  .catch(error => console.error('Error!', error.message))		
   })        
