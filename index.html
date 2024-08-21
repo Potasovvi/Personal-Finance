@@ -26,7 +26,7 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => { 
 	    	console.log('Success!', response))
-	    	form.reset();  // Reset the form fields after success
+	    	// form.reset();  // Reset the form fields after success
 			 }
       .catch(error => console.error('Error!', error.message))
   })
