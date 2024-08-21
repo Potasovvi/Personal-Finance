@@ -24,11 +24,8 @@
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-	    {
-      .catch(error => console.error('Error!', error.message))
-		form.reset();  // Reset the form fields after success
-                })
+      .then(response => console.log('Success!', response))	    
+      .catch(error => console.error('Error!', error.message))		
   })
 </script>
 
