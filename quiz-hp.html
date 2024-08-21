@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz HP</title>
+</head>
+<body>
+    <h1>Benvenuto al quiz!</h1>
+    <p id="greeting"></p>
+
+    <script>
+      // Funzione per ottenere i parametri dalla URL
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      // Ottieni nome e cognome dalla URL
+      const nome = getQueryParam('nome');
+      const cognome = getQueryParam('cognome');
+
+      // Mostra il messaggio di benvenuto
+      const greeting = document.getElementById('greeting');
+      if (nome && cognome) {
+        greeting.textContent = `Ciao ${nome} ${cognome}, sei pronto per il quiz?`;
+      } else {
+        greeting.textContent = "Benvenuto al quiz!";
+      }
+    </script>
+
+</body>
+</html>
 
