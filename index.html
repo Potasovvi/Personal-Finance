@@ -24,8 +24,12 @@
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))	    
-      .catch(error => console.error('Error!', error.message))		
+      .then(response => 
+	      {
+	      console.log('Success!', response))	    
+      	      window.location.href = "quiz-hp.html";  // Reindirizzamento alla pagina "quiz-hp"
+	      })	    
+	.catch(error => console.error('Error!', error.message))		
   })
 </script>
 
