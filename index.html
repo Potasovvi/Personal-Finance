@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style1.css"> 
 <body>
  
-    <h1>Sei pronto a ottenere il tuo G.U.F.O. ? Registrati!17</h1>
+    <h1>Sei pronto a ottenere il tuo G.U.F.O. ? Registrati!19</h1>
 	     
 <form name="submit-to-google-sheet">
   <label for="nome">Nome:</label>
@@ -19,6 +19,10 @@
 </form>
 
 <script>
+    // Aggiungi un listener per il submit del form
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita il comportamento di invio predefinito del form
+	
     // Ottieni i valori di nome e cognome dal form
     const nome = document.getElementById('nome').value;
     const cognome = document.getElementById('cognome').value;	
