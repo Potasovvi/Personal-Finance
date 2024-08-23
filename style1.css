@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'HarryP';
-    src: url('HARRYP.ttf') format('truetype'); /* Assicurati che questo percorso sia corretto */
-}
-
 body {
     font-family: Arial, sans-serif; /* Usa Arial come font principale */
     margin: 0;
