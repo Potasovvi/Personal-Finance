@@ -1,12 +1,12 @@
 body {
-    font-family: Arial, sans-serif; /* Usa Arial come font principale */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('https://raw.githubusercontent.com/Potasovvi/HP_quiz-V4/main/Harry_Bellatrix.jpg'); /* Percorso dell'immagine di sfondo */
+    background-image: url('https://raw.githubusercontent.com/Potasovvi/HP_quiz-V4/main/Harry_Bellatrix.jpg'); /* Percorso corretto dell'immagine */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    color: #fff; /* Colore del testo bianco per risaltare sullo sfondo scuro */
+    color: #fff;
 }
 
 .form-container {
