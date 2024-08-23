@@ -47,7 +47,17 @@
     formData.append('cognome', cognome); // Aggiunge il cognome estratto dalla URL
 	  
     fetch(scriptURL, { method: 'POST', body: formData })
-      .then(response => console.log('Success!', response))	    
+      .then(response => 
+	      {
+	      console.log('Success!', response);
+		      
+      	        // Ottieni i valori di nome e cognome dal form
+        	const nome = document.getElementById('nome').value;
+        	const cognome = document.getElementById('cognome').value;
+
+        // Reindirizza alla pagina "" per i ringraziamenti
+        window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
+        })	 
 	  .catch(error => console.error('Error!', error.message))		
   })        
     </script>
