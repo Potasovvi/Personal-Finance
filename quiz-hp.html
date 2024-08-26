@@ -248,9 +248,9 @@
                     document.querySelector(`input[name="domanda${i}"]:checked`).value === risposteCorrette[`domanda${i}`]) {
                     punteggio++;
                 }
-            }            
+            }  
 
-            // Mostra il punteggio all'utente
+	    // Mostra il punteggio all'utente
             const result = document.getElementById('result');
             result.textContent = `Hai ottenuto un punteggio di ${punteggio}/2.`;
 
@@ -259,6 +259,19 @@
             formData.append('nome', nome); // Aggiunge il nome estratto dalla URL
             formData.append('cognome', cognome); // Aggiunge il cognome estratto dalla URL
             formData.append('punteggio', punteggio); // Aggiunge il punteggio
+
+	    // Ora leggi il valore dal formData
+	    let completato = formData.get('completato');
+		if (completato === 1) 
+		{
+	     	    // Mostra il messaggio di avviso che il test è già stato completato
+		    console.log("Hai già completato il quiz!");
+		 } 
+		else 
+		{
+		   // Imposta completato a 1
+		   completato = 1;
+		}
 
             // Invia i dati al Google Sheet (se necessario)
 	    const scriptURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec'
