@@ -252,7 +252,7 @@
 
 	    // Mostra il punteggio all'utente
             const result = document.getElementById('result');
-            result.textContent = `Hai ottenuto un punteggio di ${punteggio}/2.`;
+            result.textContent = `Hai ottenuto un punteggio di ${punteggio}.`;
 
             // Se vuoi inviare il punteggio a Google Sheets, puoi aggiungerlo nel formData
             const formData = new FormData();
@@ -260,22 +260,38 @@
             formData.append('cognome', cognome); // Aggiunge il cognome estratto dalla URL
             formData.append('punteggio', punteggio); // Aggiunge il punteggio
 
-	    // Ora leggi il valore dal formData
-	     let completato = formData.get('completato');
-		//let completato = 0;
-		if (completato === 1) 
-		{
-	     	    // Mostra il messaggio di avviso che il test è già stato completato
-		    console.log("Hai già completato il quiz!");
-		 } 
-		else 
-		{
-		   // Imposta completato a 1
-		   completato = 1;
-		}
 
-		formData.append('completato', completato); // Aggiunge il valore di completato al Google Form
 
+
+		
+	    
+  // Apri il Google Sheet usando l'ID del foglio di calcolo
+  var sheet = SpreadsheetApp.openById('https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec').getActiveSheet();
+
+  // Ottieni i dati del foglio
+  var lastRow = sheet.getLastRow(); // Trova l'ultima riga con dati
+  
+  // Cicla attraverso tutte le righe, partendo dalla prima
+  for (var i = 1; i <= lastRow; i++) 
+  {
+    // Leggi il valore della colonna 1 e della colonna 2 per la riga corrente
+    var valore1 = sheet.getRange(i, 1).getValue();  // Riga i, colonna 1
+    var valore2 = sheet.getRange(i, 2).getValue();  // Riga i, colonna 2
+    
+    // Confronta i valori
+    if (valore1 === nome && valore2 === cognome) 
+    {      
+      Logger.log("Riga " + i + ": Hai già completato il quiz");
+      break;  // Se trovi una corrispondenza, esci dal ciclo
+    } 
+    else
+    {
+      Logger.log("Riga " + i + ": per ora non hai ancora fatto il quiz");
+    }
+  }
+
+
+		
             // Invia i dati al Google Sheet (se necessario)
 	    const scriptURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec'
    	
