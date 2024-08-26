@@ -261,7 +261,8 @@
             formData.append('punteggio', punteggio); // Aggiunge il punteggio
 
 	    // Ora leggi il valore dal formData
-	    let completato = formData.get('completato');
+	    // let completato = formData.get('completato');
+		let completato = 0;
 		if (completato === 1) 
 		{
 	     	    // Mostra il messaggio di avviso che il test è già stato completato
@@ -272,6 +273,8 @@
 		   // Imposta completato a 1
 		   completato = 1;
 		}
+
+		formData.append('completato', completato); // Aggiunge il valore di completato al Google Form
 
             // Invia i dati al Google Sheet (se necessario)
 	    const scriptURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec'
