@@ -344,33 +344,33 @@
 	    
 <!-- 
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec'
-    const form = document.forms['submit-to-google-sheet']
+//    const scriptURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec'
+//    const form = document.forms['submit-to-google-sheet']
 	
-   form.addEventListener('submit', e => {
-   e.preventDefault()
+//  form.addEventListener('submit', e => {
+//   e.preventDefault()
 
    // Crea un nuovo oggetto FormData a partire dal form esistente
-   const formData = new FormData(form);
+//   const formData = new FormData(form);
 
     // Aggiungi nome e cognome al FormData
-    formData.append('nome', nome); // Aggiunge il nome estratto dalla URL
-    formData.append('cognome', cognome); // Aggiunge il cognome estratto dalla URL
+ //   formData.append('nome', nome); // Aggiunge il nome estratto dalla URL
+ //   formData.append('cognome', cognome); // Aggiunge il cognome estratto dalla URL
 	  
-    fetch(scriptURL, { method: 'POST', body: formData })
-      .then(response => 
-	      {
-	      console.log('Success!', response);
+ //   fetch(scriptURL, { method: 'POST', body: formData })
+ //     .then(response => 
+//	      {
+//	      console.log('Success!', response);
 		      
       	        // Ottieni i valori di nome e cognome dal form
-        	const nome = document.getElementById('nome').value;
-        	const cognome = document.getElementById('cognome').value;
+  //      	const nome = document.getElementById('nome').value;
+  //      	const cognome = document.getElementById('cognome').value;
 
         // Reindirizza alla pagina "" per i ringraziamenti
-        window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
-        })	 
-	  .catch(error => console.error('Error!', error.message))		
-  })       
+   //     window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
+   //     })	 
+//	  .catch(error => console.error('Error!', error.message))		
+//  })       
 
 -->
 
