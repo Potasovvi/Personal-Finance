@@ -295,16 +295,16 @@
             // Invia i dati al Google Sheet (se necessario)
 	    const scriptURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec'
 
-            //fetch(scriptURL, {
-             //   method: 'POST',
-             //   body: formData
-            //}).then(response => {
-             //   console.log('Success!', response);
+            fetch(scriptURL, {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                console.log('Success!', response);
 
                 // Reindirizza alla pagina di ringraziamenti (facoltativo)
-            //    window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
-           // }).catch(error => console.error('Error!', error.message));
-       // });
+                window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
+            }).catch(error => console.error('Error!', error.message));
+        });
 
 
 
@@ -313,18 +313,18 @@
 
 
     // Controlla se il nome e cognome sono già presenti nel Google Sheet
-    fetch(scriptURL, {method: 'POST',body: formData})
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'duplicate') {alert('Nome e cognome già presenti! Prova con un altro nome.');}
-	else if (data.status === 'success') 
-	{
+    //fetch(scriptURL, {method: 'POST',body: formData})
+    //.then(response => response.json())
+    //.then(data => {
+        //if (data.status === 'duplicate') {alert('Nome e cognome già presenti! Prova con un altro nome.');}
+	//else if (data.status === 'success') 
+	//{
             // Reindirizza alla pagina di ringraziamenti
-            window.location.href = 'https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html';
-        }
-	    })
-	    .catch(error => console.error('Error!', error.message));
-	});
+            //window.location.href = 'https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html';
+        //}
+	    //})
+	    //.catch(error => console.error('Error!', error.message));
+	//});
 
 
 
