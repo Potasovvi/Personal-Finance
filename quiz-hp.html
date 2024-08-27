@@ -10,7 +10,6 @@
     <h1>Benvenuto al quiz!</h1>
     <p id="greeting"></p>
 
-
 	<!-- Contenitore per l'immagine -->
     <div class="image-container">
         <img src="https://raw.githubusercontent.com/Potasovvi/HP_quiz-V4/main/Harry_Vold.jpg" alt="Immagine di Harry Potter">
@@ -307,11 +306,6 @@
         //});
 
 
-
-
-
-
-
     // Controlla se il nome e cognome sono già presenti nel Google Sheet
     fetch(scriptURL, {method: 'POST',body: formData})
     .then(response => response.json())
@@ -321,6 +315,7 @@
         if (data.result === 'duplicate') {alert('Nome e cognome già presenti! Prova con un altro nome.');}
 	else if (data.result === 'success') 
 	{
+	    alert('Quiz compilato con successo');
             // Reindirizza alla pagina di ringraziamenti
             window.location.href = 'https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html';
         }
