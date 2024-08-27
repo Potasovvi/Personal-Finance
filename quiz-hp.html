@@ -318,8 +318,8 @@
     .then(data => {
 	    	// Aggiungi log per verificare il contenuto di 'data'
  		 console.log('Response Data:', data);
-        if (data.status === 'duplicate') {alert('Nome e cognome già presenti! Prova con un altro nome.');}
-	else if (data.status === 'success') 
+        if (data === 'duplicate') {alert('Nome e cognome già presenti! Prova con un altro nome.');}
+	else if (data === 'success') 
 	{
             // Reindirizza alla pagina di ringraziamenti
             window.location.href = 'https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html';
