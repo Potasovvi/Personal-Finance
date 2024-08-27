@@ -203,21 +203,22 @@
       }
 
 
+ 
 
  // Aggiungi un listener per il submit del form
         document.getElementById('quizForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Evita il comportamento di invio predefinito del form
 
-
+<!--
     // Prima verifica se nome e cognome esistono già
-    const checkURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec?nome=' + nome + '&cognome=' + cognome;
+    //const checkURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec?nome=' + nome + '&cognome=' + cognome;
 
-    fetch(checkURL, {method: 'GET', })
-    .then(response => response.json())
-    .then(data => {if (data.status === 'duplicate') {alert('Nome e cognome già presenti! Prova con un altro nome.');} 
-    else
-    {
-
+    //fetch(checkURL, {method: 'GET', })
+    //.then(response => response.json())
+    //.then(data => {if (data.status === 'duplicate') {alert('Nome e cognome già presenti! Prova con un altro nome.');} 
+    //else
+    //{
+-->
             // Ottieni le risposte selezionate
             const risposta1 = document.querySelector('input[name="domanda1"]:checked').value;
             const risposta2 = document.querySelector('input[name="domanda2"]:checked').value;
@@ -251,7 +252,7 @@
                     document.querySelector(`input[name="domanda${i}"]:checked`).value === risposteCorrette[`domanda${i}`])
 					 	 { punteggio++;}
 					  } 
-	}	   
+	//}	   
 
 	    // Mostra il punteggio all'utente
             const result = document.getElementById('result');
