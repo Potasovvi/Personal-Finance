@@ -208,16 +208,7 @@
         document.getElementById('quizForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Evita il comportamento di invio predefinito del form
 
-<!--
-    // Prima verifica se nome e cognome esistono già
-    //const checkURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec?nome=' + nome + '&cognome=' + cognome;
 
-    //fetch(checkURL, {method: 'GET', })
-    //.then(response => response.json())
-    //.then(data => {if (data.status === 'duplicate') {alert('Nome e cognome già presenti! Prova con un altro nome.');} 
-    //else
-    //{
--->
             // Ottieni le risposte selezionate
             const risposta1 = document.querySelector('input[name="domanda1"]:checked').value;
             const risposta2 = document.querySelector('input[name="domanda2"]:checked').value;
@@ -251,7 +242,7 @@
                     document.querySelector(`input[name="domanda${i}"]:checked`).value === risposteCorrette[`domanda${i}`])
 					 	 { punteggio++;}
 					  } 
-	//}	   
+		   
 
 	    // Mostra il punteggio all'utente
             const result = document.getElementById('result');
@@ -267,43 +258,8 @@
 
 
 		
-<!-- 	    
-  // Apri il Google Sheet usando l'ID del foglio di calcolo
-  //var sheet = SpreadsheetApp.openById('1HZZ6kj2xWFCPVi0xQD4R4dKnySGjXs-e3aDe8cfYljs').getActiveSheet();
-
-  // Ottieni i dati del foglio
-  //var lastRow = sheet.getLastRow(); // Trova l'ultima riga con dati
-  
-  // Cicla attraverso tutte le righe, partendo dalla prima
-  //for (var i = 1; i <= lastRow; i++) 
-  //{
-    // Leggi il valore della colonna 1 e della colonna 2 per la riga corrente
-  //  var valore1 = sheet.getRange(i, 1).getValue();  // Riga i, colonna 1
-   // var valore2 = sheet.getRange(i, 2).getValue();  // Riga i, colonna 2
-    
-    // Confronta i valori
-    //if (valore1 === nome && valore2 === cognome) 
-    //{      
-     // Logger.log("Riga " + i + ": Hai già completato il quiz");
-    //  break;  // Se trovi una corrispondenza, esci dal ciclo
-    //}     
-  //}
- -->
-
-		
             // Invia i dati al Google Sheet (se necessario)
 	    const scriptURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec'
-
-            //fetch(scriptURL, {
-                //method: 'POST',
-                //body: formData
-            //}).then(response => {
-                //console.log('Success!', response);
-
-                // Reindirizza alla pagina di ringraziamenti (facoltativo)
-                //window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
-            //}).catch(error => console.error('Error!', error.message));
-        //});
 
 
     // Controlla se il nome e cognome sono già presenti nel Google Sheet
@@ -322,54 +278,6 @@
 	    })
 	    .catch(error => console.error('Error!', error.message));
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	    
-<!-- 
-
-//    const scriptURL = 'https://script.google.com/macros/s/AKfycbyj0qIoPv1cgjS4UIV6r3KVTJoeOvKdbSJJm6abUuG1gRQzNbJkhkJIexZPweJee9Hy9w/exec'
-//    const form = document.forms['submit-to-google-sheet']
-	
-//  form.addEventListener('submit', e => {
-//   e.preventDefault()
-
-   // Crea un nuovo oggetto FormData a partire dal form esistente
-//   const formData = new FormData(form);
-
-    // Aggiungi nome e cognome al FormData
- //   formData.append('nome', nome); // Aggiunge il nome estratto dalla URL
- //   formData.append('cognome', cognome); // Aggiunge il cognome estratto dalla URL
-	  
- //   fetch(scriptURL, { method: 'POST', body: formData })
- //     .then(response => 
-//	      {
-//	      console.log('Success!', response);
-		      
-      	        // Ottieni i valori di nome e cognome dal form
-  //      	const nome = document.getElementById('nome').value;
-  //      	const cognome = document.getElementById('cognome').value;
-
-        // Reindirizza alla pagina "" per i ringraziamenti
-   //     window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
-   //     })	 
-//	  .catch(error => console.error('Error!', error.message))		
-//  })       
-
--->
 
 
 
