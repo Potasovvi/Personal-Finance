@@ -263,21 +263,32 @@
 
 
     // Controlla se il nome e cognome sono già presenti nel Google Sheet
-    fetch(scriptURL, {method: 'POST',body: formData})
-    .then(response => response.json())
-    .then(data => {
+    //fetch(scriptURL, {method: 'POST',body: formData})
+    //.then(response => response.json())
+    //.then(data => {
 	    	// Aggiungi log per verificare il contenuto di 'data'
- 		 console.log('Response Data:', data);
-        if (data.result === 'duplicate') {alert('Nome e cognome già presenti! Prova con un altro nome.');}
-	else if (data.result === 'success') 
-	{
-	    alert('Quiz compilato con successo');
+ 		 //console.log('Response Data:', data);
+        //if (data.result === 'duplicate') {alert('Nome e cognome già presenti! Prova con un altro nome.');}
+	//else if (data.result === 'success') 
+	//{
+	    //alert('Quiz compilato con successo');
             // Reindirizza alla pagina di ringraziamenti
-            window.location.href = 'https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html';
-        }
-	    })
-	    .catch(error => console.error('Error!', error.message));
-	});
+            //window.location.href = 'https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html';
+        //}
+	    //})
+	    //.catch(error => console.error('Error!', error.message));
+	//});
+
+	     fetch(scriptURL, {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                console.log('Success!', response);
+		alert('Quiz compilato con successo');
+                // Reindirizza alla pagina di ringraziamenti (facoltativo)
+                window.location.href = `https://potasovvi.github.io/HP_quiz-V4/ringraziamenti.html`;
+            }).catch(error => console.error('Error!', error.message));
+        });
 
 
 
