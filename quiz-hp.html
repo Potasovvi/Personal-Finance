@@ -168,6 +168,81 @@
             <input type="radio" name="domanda10" value="D"> D) Seamus Finningan
         </label><br>
 
+	    <!-- Undicesima domanda -->
+        <p>11) Qual è la data di nascita di Harry Potter?</p>
+        <label>
+            <input type="radio" name="domanda11" value="A" required> A) 30 giugno 1980
+        </label><br>
+        <label>
+            <input type="radio" name="domanda11" value="B"> B) 30 giugno 1981
+        </label><br>
+        <label>
+            <input type="radio" name="domanda11" value="C"> C) 31 luglio 1980
+        </label><br>
+        <label>
+            <input type="radio" name="domanda11" value="D"> D) 31 luglio 1981
+        </label><br>
+
+	        <!-- Dodicesima domanda -->
+        <p>12) Quanti punti prende chi acchiappa il boccino d'oro?</p>
+        <label>
+            <input type="radio" name="domanda12" value="A" required> A) 100
+        </label><br>
+        <label>
+            <input type="radio" name="domanda12" value="B"> B) 150
+        </label><br>
+        <label>
+            <input type="radio" name="domanda12" value="C"> C) 200
+        </label><br>
+        <label>
+            <input type="radio" name="domanda12" value="D"> D) 250
+        </label><br>
+
+	            <!-- Tredicesima domanda -->
+        <p>13) Qual è la parola d'ordine che permette l'accesso alla sala comune di Grifondoro nel primo anno di Harry?</p>
+        <label>
+            <input type="radio" name="domanda13" value="A" required> A) Draco Dormiens
+        </label><br>
+        <label>
+            <input type="radio" name="domanda13" value="B"> B) Fortuna Major
+        </label><br>
+        <label>
+            <input type="radio" name="domanda13" value="C"> C) Sorbetto al Limone
+        </label><br>
+        <label>
+            <input type="radio" name="domanda13" value="D"> D) Caput Draconis
+        </label><br>
+
+	                <!-- Quattordicesima domanda -->
+        <p>14) Quale Horcrux viene distrutto da Hermione Granger?</p>
+        <label>
+            <input type="radio" name="domanda14" value="A" required> A) Il diadema di Corvonero
+        </label><br>
+        <label>
+            <input type="radio" name="domanda14" value="B"> B) La coppa di Tassorosso
+        </label><br>
+        <label>
+            <input type="radio" name="domanda14" value="C"> C) Il diario di Tom Riddle
+        </label><br>
+        <label>
+            <input type="radio" name="domanda14" value="D"> D) Il medaglione di Serpeverde
+        </label><br>
+
+	                    <!-- Quindicesima domanda -->
+        <p>15) Di chi era la moto con cui Hagrid porta Harry a casa dei Dursley la prima volta?</p>
+        <label>
+            <input type="radio" name="domanda15" value="A" required> A) Sirius Black
+        </label><br>
+        <label>
+            <input type="radio" name="domanda15" value="B"> B) Remus Lupin
+        </label><br>
+        <label>
+            <input type="radio" name="domanda15" value="C"> C) James Potter
+        </label><br>
+        <label>
+            <input type="radio" name="domanda15" value="D"> D) Albus Silente
+        </label><br>
+
         <br><br>
         <button type="submit">Invia</button>
     </form>
@@ -220,6 +295,11 @@
             const risposta8 = document.querySelector('input[name="domanda8"]:checked').value;
             const risposta9 = document.querySelector('input[name="domanda9"]:checked').value;
             const risposta10 = document.querySelector('input[name="domanda10"]:checked').value;
+	    const risposta11 = document.querySelector('input[name="domanda11"]:checked').value;
+	    const risposta12 = document.querySelector('input[name="domanda12"]:checked').value;
+	    const risposta13 = document.querySelector('input[name="domanda13"]:checked').value;
+	    const risposta14 = document.querySelector('input[name="domanda14"]:checked').value;
+	    const risposta15 = document.querySelector('input[name="domanda15"]:checked').value;
 
 	    // Risposte corrette
             const risposteCorrette = {
@@ -232,7 +312,12 @@
                 domanda7: 'B',
                 domanda8: 'A',
                 domanda9: 'A',
-                domanda10: 'C'
+                domanda10: 'C',
+		domanda11: 'C',
+		domanda12: 'B',
+		domanda13: 'D',
+		domanda14: 'B',
+		domanda15: 'A' 
             };
 
             // Calcola il punteggio
